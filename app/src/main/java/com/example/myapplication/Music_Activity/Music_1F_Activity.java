@@ -1,4 +1,4 @@
-package com.example.myapplication.Prime_Activity;
+package com.example.myapplication.Music_Activity;
 
 import android.animation.ObjectAnimator;
 import android.content.pm.ActivityInfo;
@@ -13,14 +13,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.myapplication.R;
 
 
-public class Prime_1F_Activity extends AppCompatActivity {
+public class Music_1F_Activity extends AppCompatActivity {
 
     int flag = 0;
     TextView textview;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_prime_1f);
+        setContentView(R.layout.activity_music_1f);
         textview=findViewById(R.id.textView6);
         moving_101();
         moving_102();
@@ -35,7 +37,7 @@ public class Prime_1F_Activity extends AppCompatActivity {
 
     // 101호에서 최단거리 이동
     private void moving_101() {
-        final Button b = (Button) findViewById(R.id.p_101);
+        final Button b = (Button) findViewById(R.id.m_101);
         final ImageView iv = (ImageView) findViewById(R.id.imageView1);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,11 +45,11 @@ public class Prime_1F_Activity extends AppCompatActivity {
 
                 if (flag == 0) {
                     {
-                        ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 1380, 1380, 1620); //x 좌표
+                        ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 350, 200); //x 좌표
                         animation1.setDuration(1500);
                         animation1.start();
 
-                        ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 470, 390, 390); //y 좌표
+                        ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 480,480); //y 좌표
                         animation3.setDuration(1500);
                         animation3.start();
                     }
@@ -71,7 +73,7 @@ public class Prime_1F_Activity extends AppCompatActivity {
 
     // 102호에서 최단거리 이동
     private void moving_102() {
-        final Button b = (Button) findViewById(R.id.p_102);
+        final Button b = (Button) findViewById(R.id.m_102);
         final ImageView iv = (ImageView) findViewById(R.id.imageView1);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,11 +81,11 @@ public class Prime_1F_Activity extends AppCompatActivity {
 
                 if (flag == 0) {
                     {
-                        ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX",  1200,1380, 1380, 1620); //x 좌표
+                        ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX",  300, 200); //x 좌표
                         animation1.setDuration(1600);
                         animation1.start();
 
-                        ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY",  470, 470, 390, 390); //y 좌표
+                        ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY",  480,480); //y 좌표
                         animation3.setDuration(1600);
                         animation3.start();
                     }
@@ -107,7 +109,7 @@ public class Prime_1F_Activity extends AppCompatActivity {
 
     // 103호에서 최단거리 이동
     private void moving_103() {
-        final Button b = (Button) findViewById(R.id.p_103);
+        final Button b = (Button) findViewById(R.id.m_103);
         final ImageView iv = (ImageView) findViewById(R.id.imageView1);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,11 +117,11 @@ public class Prime_1F_Activity extends AppCompatActivity {
 
                 if (flag == 0) {
                     {
-                        ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX",  920, 1380, 1380, 1620); //x 좌표
+                        ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX",  600, 200); //x 좌표
                         animation1.setDuration(1800);
                         animation1.start();
 
-                        ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY",  470, 470, 390, 390); //y 좌표
+                        ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY",  480,480); //y 좌표
                         animation3.setDuration(1800);
                         animation3.start();
                     }
@@ -151,11 +153,11 @@ public class Prime_1F_Activity extends AppCompatActivity {
 
                 if (flag == 0) {
                     {
-                        ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX",  720, 720, 1380, 1380, 1620);
+                        ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX",  1600,1800);
                         animation1.setDuration(2100);
                         animation1.start();
 
-                        ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY",  620, 470, 470, 390, 390);
+                        ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY",  480,480);
                         animation3.setDuration(2100);
                         animation3.start();
                     }
@@ -187,11 +189,11 @@ public class Prime_1F_Activity extends AppCompatActivity {
 
                 if (flag == 0) {
                     {
-                        ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 720,1380, 1380, 1620);
+                        ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 1600,1800);
                         animation1.setDuration(1900);
                         animation1.start();
 
-                        ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY",  470,470, 390, 390);
+                        ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY",  480,480);
                         animation3.setDuration(1900);
                         animation3.start();
                     }
@@ -223,11 +225,11 @@ public class Prime_1F_Activity extends AppCompatActivity {
 
                 if (flag == 0) {
                     {
-                        ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 720,1380, 1380, 1620);
+                        ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 1230,1045, 1045);
                         animation1.setDuration(1900);
                         animation1.start();
 
-                        ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 470, 470, 390, 390);
+                        ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 590,590, 800);
                         animation3.setDuration(1900);
                         animation3.start();
                     }
@@ -249,7 +251,7 @@ public class Prime_1F_Activity extends AppCompatActivity {
         });
     }
 
-    //107호에서 최단거리 이동
+    //로비에서 최단거리 이동
     private void moving_107() {
         final Button button = (Button) findViewById(R.id.m_107);
         final ImageView iv = (ImageView) findViewById(R.id.imageView1);
@@ -259,11 +261,11 @@ public class Prime_1F_Activity extends AppCompatActivity {
 
                 if (flag == 0) {
                     {
-                        ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 895, 1380, 1380, 1620);
+                        ObjectAnimator animation1 = ObjectAnimator.ofFloat(iv, "translationX", 1100,1100);
                         animation1.setDuration(1800);
                         animation1.start();
 
-                        ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 470, 470, 390, 390);
+                        ObjectAnimator animation3 = ObjectAnimator.ofFloat(iv, "translationY", 480,800);
                         animation3.setDuration(1800);
                         animation3.start();
                     }

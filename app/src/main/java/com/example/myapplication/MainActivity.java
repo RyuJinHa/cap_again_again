@@ -1,39 +1,34 @@
 package com.example.myapplication;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
-import android.net.Uri;
-import android.os.Bundle;
-import android.util.DisplayMetrics;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 import android.location.Address;
 import android.location.Geocoder;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.example.myapplication.Music_Activity.Music_1F_Activity;
+import com.example.myapplication.Music_Activity.Music_2F_Activity;
+import com.example.myapplication.Music_Activity.Music_3F_Activity;
+import com.example.myapplication.Music_Activity.Music_4F_Activity;
+import com.example.myapplication.Music_Activity.Music_5F_Activity;
+import com.example.myapplication.Music_Activity.Music_6F_Activity;
+import com.example.myapplication.Music_Activity.Music_7F_Activity;
 import com.example.myapplication.Prime_Activity.Prime_1F_Activity;
 import com.example.myapplication.Prime_Activity.Prime_2F_Activity;
 import com.example.myapplication.Prime_Activity.Prime_3F_Activity;
@@ -44,14 +39,11 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -80,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private GoogleMap mMap;
 
     int temp;
-
+    int temp1;
     @SuppressLint("WrongViewCast")
 
     @Override
@@ -443,6 +435,73 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
         }
+
+        else if (marker.getTitle().equals("음악대학")) {
+            final CharSequence[] items = { "1층", "2층", "3층", "4층","5층", "6층", "7층"};
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+
+
+
+            alertDialogBuilder.setTitle("층을 선택하세요");
+            alertDialogBuilder.setCancelable(false);
+
+            alertDialogBuilder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    switch (temp1){
+                        case 0:
+                            Intent intent = new Intent(MainActivity.this, Music_1F_Activity.class);
+                            startActivity(intent);
+                            break;
+                        case 1:
+                            Intent intent1 = new Intent(MainActivity.this, Music_2F_Activity.class);
+                            startActivity(intent1);
+                            break;
+                        case 2:
+                            Intent intent2 = new Intent(MainActivity.this, Music_3F_Activity.class);
+                            startActivity(intent2);
+                            break;
+                        case 3:
+                            Intent intent3 = new Intent(MainActivity.this, Music_4F_Activity.class);
+                            startActivity(intent3);
+                            break;
+                        case 4:
+                            Intent intent4 = new Intent(MainActivity.this, Music_5F_Activity.class);
+                            startActivity(intent4);
+                            break;
+                        case 5:
+                            Intent intent5 = new Intent(MainActivity.this, Music_6F_Activity.class);
+                            startActivity(intent5);
+                            break;
+                        case 6:
+                            Intent intent6 = new Intent(MainActivity.this, Music_7F_Activity.class);
+                            startActivity(intent6);
+                            break;
+
+                    }
+                    dialog.dismiss();
+                }
+            });
+
+            alertDialogBuilder.setSingleChoiceItems(items, -1,
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            temp1 = which;
+                        }
+                    });
+
+            alertDialogBuilder.setNeutralButton("취소", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+            AlertDialog alertDialog = alertDialogBuilder.create();
+            alertDialog.show();
+        }
         return false;
     }
+
+
 }

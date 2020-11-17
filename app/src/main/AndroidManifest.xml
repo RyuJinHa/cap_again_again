@@ -44,6 +44,13 @@
         <activity android:name=".Prime_Activity.Prime_1F_Activity" />
         <activity android:name=".Prime_Activity.Prime_2F_Activity" />
         <activity android:name=".Prime_Activity.Prime_3F_Activity" />
+        <activity android:name=".Music_Activity.Music_1F_Activity"/>
+        <activity android:name=".Music_Activity.Music_2F_Activity"/>
+        <activity android:name=".Music_Activity.Music_3F_Activity"/>
+        <activity android:name=".Music_Activity.Music_4F_Activity"/>
+        <activity android:name=".Music_Activity.Music_5F_Activity"/>
+        <activity android:name=".Music_Activity.Music_6F_Activity"/>
+        <activity android:name=".Music_Activity.Music_7F_Activity"/>
         <activity
             android:name=".FirstScreenActivity"
             android:screenOrientation="portrait"
@@ -53,10 +60,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 팝업 Activity -->
-        <activity
-            android:name=".PopupActivity"
-            android:theme="@android:style/Theme.Dialog" />
+        </activity>
+
+
     </application>
 
 </manifest>
