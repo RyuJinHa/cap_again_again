@@ -15,6 +15,7 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -43,6 +44,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -330,18 +332,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             @Override
             public void onClick(View v) {
                 String str = editText.getText().toString();
-                List<Address> addressList = null;
 
                 try {
                     // editText에 입력한 텍스트(주소, 지역, 장소 등)을 지오 코딩을 이용해 변환
-                    addressList = geocoder.getFromLocationName(
+                    List<Address> addressList = geocoder.getFromLocationName(
                             str, // 주소
                             10); // 최대 검색 결과 개수
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                if (addressList.size() > 0) {
                     System.out.println(addressList.get(0).toString());
                     // 콤마를 기준으로 split
                     String[] splitStr = addressList.get(0).toString().split(",");
@@ -360,11 +356,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                     mOptions2.title("search result");
                     mOptions2.snippet(address);
                     mOptions2.position(point);
+                    mOptions2.icon(BitmapDescriptorFactory.fromResource(R.drawable.mappin));
                     // 마커 추가
                     mMap.addMarker(mOptions2);
                     // 해당 좌표로 화면 줌
-                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(point, 15));
-                } else {
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(point, 18));
+
+                } catch (Exception e) {
                     new AlertDialog.Builder(MainActivity.this) // TestActivity 부분에는 현재 Activity의 이름 입력.
                             .setMessage("검색 결과가 없습니다")     // 제목 부분 (직접 작성)
                             .setPositiveButton("확인", new DialogInterface.OnClickListener(){      // 버튼1 (직접 작성)
